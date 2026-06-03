@@ -49,6 +49,14 @@ INSTALLED_APPS = [
     'notices',
     'library',
     'reports',
+    'timetable',
+    'assignments',
+    'placement',
+    'events',
+    'leaves',
+    'notifications',
+    'audit_logs',
+    'ai_features',
 ]
 
 MIDDLEWARE = [

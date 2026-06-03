@@ -26,6 +26,16 @@ class BorrowRecord(models.Model):
         ('returned', 'Returned'),
         ('overdue', 'Overdue')
     ), default='borrowed')
+    fine_amount = models.DecimalField(max_digits=6, decimal_places=2, default=0.00)
+
+    def calculate_fine(self):
+        # Calculates fine if return date or current date is past due date ($1/day overdue)
+        import datetime
+        end_date = self.return_date if self.return_date else datetime.date.today()
+        if end_date > self.due_date:
+            days_overdue = (end_date - self.due_date).days
+            return days_overdue * 1.00
+        return 0.00
 
     def __str__(self):
         return f"{self.book.title} borrowed by {self.student.username}"

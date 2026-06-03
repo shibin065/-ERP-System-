@@ -27,4 +27,12 @@ urlpatterns = [
     path('api/notices/', include('notices.urls')),
     path('api/library/', include('library.urls')),
     path('api/reports/', include('reports.urls')),
+    path('api/timetable/', include('timetable.urls')),
+    path('api/assignments/', include('assignments.urls')),
+    path('api/placement/', include('placement.urls')),
+    path('api/events/', include('events.urls')),
+    path('api/leaves/', include('leaves.urls')),
+    path('api/notifications/', include('notifications.urls')),
+    path('api/audit_logs/', include('audit_logs.urls')),
+    path('api/ai/', include('ai_features.urls')),
 ]
